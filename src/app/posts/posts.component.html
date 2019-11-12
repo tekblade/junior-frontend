@@ -1,0 +1,14 @@
+<mat-grid-list cols="3" rowHeight="150px">
+    <mat-grid-tile
+        *ngFor="let post of showPosts; let i = index" 
+        [colspan]="post.cols"
+        [rowspan]="post.rows"
+        [style.background]="post.color">
+      {{post.text}}
+     <p><button  (click)="postDetailsClick(i)" >Try it</button></p>
+    
+     <br>
+      
+    </mat-grid-tile>
+  </mat-grid-list>
+
