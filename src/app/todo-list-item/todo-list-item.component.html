@@ -18,7 +18,7 @@
     
     <ng-container matColumnDef="buttonEdit">
         <th mat-header-cell *matHeaderCellDef> buttonEdit </th>
-        <td mat-cell *matCellDef="let row"><button (click)="makeEditable(row)" class="mat-raised-button" type="submit">Edit</button></td>
+        <td mat-cell *matCellDef="let row"><button *ngIf="!row.isEdited" (click)="makeEditable(row)" class="mat-raised-button" type="submit">Edit</button><button *ngIf="row.isEdited" (click)="makeEditable(row)" mat-raised-button color="primary" type="submit">Save</button></td>
     </ng-container>
 
     <ng-container matColumnDef="buttonDelete">
